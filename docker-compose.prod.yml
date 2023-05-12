@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    volumes:
+      - ./:/home/node/app
+    env_file:
+      - .env
+    command: 'npm run start:dev'
